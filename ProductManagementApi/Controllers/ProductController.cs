@@ -89,23 +89,7 @@ namespace ProductManagementApi.Controllers
                         StringComparison.OrdinalIgnoreCase))
                     .ToList();
             }
-
-            // Filter by Minimum Price
-            if (minPrice.HasValue)
-            {
-                products = products
-                    .Where(x => x.Price >= minPrice.Value)
-                    .ToList();
-            }
-
-            // Filter by Maximum Price
-            if (maxPrice.HasValue)
-            {
-                products = products
-                    .Where(x => x.Price <= maxPrice.Value)
-                    .ToList();
-            }
-
+            
             // Sort by Price
             if (sort?.ToLower() == "asc")
             {
