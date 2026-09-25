@@ -65,7 +65,7 @@ namespace ProductManagementApi.Controllers
         }
 
         [HttpGet("filter")]
-        public async Task<IActionResult> FilterAndSortProducts( string? category,  string? name, decimal? minPrice, decimal? maxPrice,string? sort)
+        public async Task<IActionResult> FilterAndSortProducts( string? category,  string? name,string? sort)
             {
             // Get all products
             var products = await _productService.GetAllProductsAsync();
